@@ -1,1 +1,2 @@
-console.log("hello world");
+const fs = require("fs");
+const inquirer = require("inquirer");
