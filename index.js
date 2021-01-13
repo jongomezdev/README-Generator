@@ -1,5 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
+const generateReadMe = require("generateReadMe");
 
 const promptUser = () =>
   inquirer.prompt([
@@ -20,12 +21,7 @@ const promptUser = () =>
     },
   ]);
 
-const generateReadMe = (answers) =>
-  `
-  # ${answers.title}
-
-  ## ${answers.description}
-  ---
-  ## ${answers.installation}
-
-  `;
+promptUser()
+  .then((answers) => writeFileAsync("README.md", generateReadMe(answers)))
+  .then(() => console.log("Successfully wrote to README.md"))
+  .catch((err) => console.error(err));
