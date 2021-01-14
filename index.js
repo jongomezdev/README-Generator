@@ -99,8 +99,13 @@ Check out my other repositories in the link below:
 
 - [GitHub Profile](https://github.com/${github})
 
-- For any additional questions, please email me: $[Email](mailto:${email})
+- For any additional questions, please [email](mailto:${email}) me.
   
+## Demo
+
+The following animation demonstrates the application functionality:
+
+![${title} demo]()
 `;
     fs.writeFile("README.md", generateReadMe, (err) =>
       err ? console.log(err) : console.log("Success!")
