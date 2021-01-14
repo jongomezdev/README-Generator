@@ -1,7 +1,6 @@
 // Require Modules
 const fs = require("fs");
 const inquirer = require("inquirer");
-// const generateReadMe = require("./components/generateReadMe");
 const $license = require("./components/license");
 
 // Command line prompts
@@ -33,6 +32,11 @@ inquirer
       message: "Choose a license for the project: ",
       name: "license",
       choices: ["Apache", "GNU", "MIT"],
+    },
+    {
+      type: "input",
+      message: "What is your GitHub username?",
+      name: "github",
     },
     {
       type: "input",
@@ -85,10 +89,3 @@ ${contributing}
       err ? console.log(err) : console.log("Success!")
     );
   });
-
-// function to write user input to readme file
-
-// function writeToFile(filename, data) {
-//   console.log("Success!");
-//   return fs.writeFile(filename, data);
-// }
