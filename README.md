@@ -51,4 +51,4 @@ Check out my other repositories in the link below:
 
 The following animation demonstrates the application functionality:
 
-![README Generator demo](assets/readmegeneratordemo.webm)
+![README Generator demo]()
