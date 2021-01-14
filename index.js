@@ -1,8 +1,10 @@
+// Require Modules
 const fs = require("fs");
 const inquirer = require("inquirer");
-const generateReadMe = require("generateReadMe");
+const generateReadMe = require("./components/generateReadMe");
 
-const promptUser = () =>
+// Command line prompts
+const questions = [
   inquirer.prompt([
     {
       type: "input",
@@ -19,9 +21,20 @@ const promptUser = () =>
       name: "installation",
       message: "What are the steps required to install your project?",
     },
-  ]);
+  ]),
+];
 
-promptUser()
-  .then((answers) => writeFileAsync("README.md", generateReadMe(answers)))
-  .then(() => console.log("Successfully wrote to README.md"))
-  .catch((err) => console.error(err));
+// function to write user response to README file
+function writeToFile(filename, data) {
+  fs.writeFile(filename, data, function (err) {
+    err ? console.log(err) : console.log("File was successfully created!");
+  });
+}
+
+// .then((answers) => fs.writeFile("README.md", generateReadMe(answers)))
+// .then(() => console.log("Successfully wrote to README.md"))
+// .catch((err) => console.error(err));
+
+// fs.writeFile("README.md", generateReadMe, (err) =>
+//   err ? console.log(err) : console.log("Success!")
+// );
