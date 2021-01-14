@@ -40,6 +40,11 @@ inquirer
     },
     {
       type: "input",
+      message: "What is your email address?",
+      name: "email",
+    },
+    {
+      type: "input",
       message: "Describe the guidelines for contributing to this repo: ",
       name: "contributing",
     },
@@ -52,6 +57,8 @@ inquirer
       installation,
       usage,
       license,
+      github,
+      email,
       contributing,
     } = data;
     const generateReadMe = `
@@ -61,28 +68,38 @@ ${$license[license].badge}
 ## Description
   
 ${description}
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Questions](#questions)
   
----
 ## Installation
     
 ${installation}
----
 
 ## Usage
 
 ${usage}
 
----
-
 ## License
 
 ${$license[license].notice}
 
----
-
 ## Contributing
 
 ${contributing}
+
+## Questions
+
+Check out my other repositories in the link below:
+
+- [GitHub Profile](https://github.com/${github})
+
+- For any additional questions, please email me: $[Email](mailto:${email})
   
 `;
     fs.writeFile("README.md", generateReadMe, (err) =>
