@@ -2,6 +2,7 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 // const generateReadMe = require("./components/generateReadMe");
+const $license = require("./components/license");
 
 // Command line prompts
 
@@ -40,6 +41,7 @@ inquirer
     },
   ])
   .then((data) => {
+    // Callback
     const {
       title,
       description,
@@ -50,6 +52,7 @@ inquirer
     } = data;
     const generateReadMe = `
 # ${title}
+${$license[license].badge}
   
 ## Description
   
@@ -69,7 +72,7 @@ ${usage}
 
 ## License
 
-${license}
+${$license[license].notice}
 
 ---
 
