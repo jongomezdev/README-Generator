@@ -1,12 +1,17 @@
-function generateReadMe(data) {
-  return `
-  # ${data.title}
+// function generateReadMe(data) {
+//   return `
+//   # ${title}
 
-  ## ${data.description}
-  ---
-  ## ${data.installation}
+//   ## Description
 
-  `;
-}
+//   ${description}
 
-module.exports = generateReadMe;
+//   ---
+//   ## Installation
+
+//   ${installation}
+
+//   `;
+// }
+
+// module.exports = generateReadMe;
