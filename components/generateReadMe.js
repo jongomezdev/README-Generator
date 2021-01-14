@@ -1,5 +1,5 @@
-const generateReadMe = (data) =>
-  `
+function generateReadMe(data) {
+  return `
   # ${data.title}
 
   ## ${data.description}
@@ -7,5 +7,6 @@ const generateReadMe = (data) =>
   ## ${data.installation}
 
   `;
+}
 
 module.exports = generateReadMe;
