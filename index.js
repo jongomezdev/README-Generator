@@ -32,7 +32,7 @@ inquirer
       type: "list",
       message: "Choose a license for the project: ",
       name: "license",
-      choices: ["Apache", "GNU GPLv3", "MIT"],
+      choices: ["Apache", "GNU", "MIT"],
     },
     {
       type: "input",
